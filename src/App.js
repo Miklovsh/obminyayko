@@ -1,19 +1,20 @@
 import React from 'react';
+import Logo from '../src/logo.svg'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className='header'>
-        <div className='header__container'>
+        <div className='container'>
           <div className='header__top'>
-            <img className='header__logo' />
+            <a className='header__logo-link' href='#'><img className='header__logo' src={Logo} /></a>
             <h1 className='header__title'>Обміняйко</h1>
           </div>
         </div>
       </header>
       <main className='main'>
-        <div className='main__container'>
+        <div className='container'>
           <p className='main__сurrent-date'>Сьогодні в нас:</p>
           <h2 className='main__update'>Дата останього оновлення:</h2>
           <div className='main__currency-inner'>

@@ -1,0 +1,215 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Lora400';
+  src: url('../public/fonts/Lora-Regular.woff2') format('woff2'), url('../public/fonts/Lora-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lora700';
+  src: url('../public/fonts/Lora-Bold.woff2') format('woff2'), url('../public/fonts/Lora-Bold.woff') format('woff');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+
+.App {
+  font-family: 'Lora400';
+  color: seagreen;
+}
+
+h1 {
+  font-family: 'Lora700';
+}
+
+h2 {
+  font-family: 'Lora700';
+}
+
+input {
+  font-family: 'Lora400';
+}
+
+button {
+  font-family: 'Lora400';
+}
+
+select,
+option {
+  font-family: 'Lora400';
+}
+
+.header {
+  background-color: seagreen;
+}
+
+.container {
+  max-width: 1220px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header__top {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.header__logo {
+  width: 70px;
+  height: 70px;
+}
+
+.header__title {
+  font-size: 24px;
+  color: #000;
+}
+
+.main {
+  min-height: calc(100vh - 196px);
+}
+
+.main__сurrent-date {
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 0px;
+}
+
+.main__update {
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 10px;
+}
+
+.main__currency-inner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.main__currency-box {
+  margin-top: 50px;
+}
+
+.main__currency {
+  font-size: 24px;
+  line-height: 28px;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.main__currency-value {
+  font-size: 18px;
+  line-height: 22px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  border: 1px solid seagreen;
+  text-align: center;
+  padding: 10px;
+}
+
+.main__exchange {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.main__exchange-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__exchange-box+.main__exchange-box {
+  margin-left: 40px;
+}
+
+.main__exchange-label {
+  display: inherit;
+  font-size: 20px;
+  line-height: 24px;
+  padding-bottom: 10px;
+}
+
+.main__exchange-input {
+  border: 1px solid seagreen;
+  padding: 10px;
+  outline: none;
+  color: seagreen;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.main__exchange-selecet {
+  font-size: 20px;
+  color: seagreen;
+  margin-left: 5px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.main__exchange-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  font-size: 18px;
+  line-height: 22px;
+  color: seagreen;
+  background-color: transparent;
+  border: 1px solid seagreen;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.main__exchange-btn:hover {
+  background-color: seagreen;
+  color: #fff;
+  transition: all .5s;
+}
+
+.footer {
+  background-color: seagreen;
+}
+
+.footer__developer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.footer__developer-label {
+  font-family: 'Lora400';
+  color: #000;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.footer__developer-name {
+  font-family: 'Lora400';
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+  color: #000;
+  padding-left: 3px;
+}
+
+.footer__developer-name:hover {
+  text-decoration: underline;
+  transition: all .5s;
+}
