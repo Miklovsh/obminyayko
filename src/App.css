@@ -51,6 +51,7 @@ option {
   background-color: seagreen;
 }
 
+
 .container {
   max-width: 1220px;
   padding-left: 10px;
@@ -58,6 +59,7 @@ option {
   margin-left: auto;
   margin-right: auto;
 }
+
 
 .header__top {
   display: flex;
@@ -76,6 +78,7 @@ option {
   color: #000;
 }
 
+
 .main {
   min-height: calc(100vh - 196px);
 }
@@ -90,6 +93,13 @@ option {
   font-size: 20px;
   line-height: 24px;
   margin-top: 10px;
+}
+
+.main__info {
+  font-size: 32px;
+  line-height: 36px;
+  color: #000;
+  text-align: center;
 }
 
 .main__currency-inner {
@@ -159,6 +169,11 @@ option {
   background-color: transparent;
   border: none;
   outline: none;
+}
+
+.main__exchange-result {
+  font-size: 20px;
+  line-height: 24px;
 }
 
 .main__exchange-btn {

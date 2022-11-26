@@ -20,8 +20,6 @@ function App() {
   const [cad, setCad] = useState('');
   const [czk, setCzk] = useState('');
   const [pln, setPln] = useState('');
-  const [xau, setXau] = useState('');
-
 
   const url = `https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json`;
 
@@ -39,7 +37,6 @@ function App() {
         setCad(response.data[1].rate.toFixed(2));
         setCzk(response.data[4].rate.toFixed(2));
         setPln(response.data[33].rate.toFixed(2));
-        setXau(response.data[58].rate.toFixed(2));
         // console.log(response.data);
       })
     } catch {
@@ -73,8 +70,9 @@ function App() {
     cad,
     czk,
     pln,
-    xau,
   }
+
+
   if (error) {
     return <div>{error}</div>;
   } else {
@@ -85,7 +83,8 @@ function App() {
           <main className='main'>
             <div className='container'>
               <p className='main__сurrent-date'>Сьогодні в нас: {day}.{month}.{year} {currentTime}</p>
-              <h2 className='main__update'>Дата останього оновлення: {update} </h2>
+              <h3 className='main__update'>Дата оновлення: {update} </h3>
+              <h2 className="main__info">Курс від національного банку України</h2>
               <CurrencyRate />
               <Exchange />
             </div>
