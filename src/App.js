@@ -8,22 +8,23 @@ import './App.css';
 import axios from 'axios';
 
 function App() {
-  const [error, setError] = useState(null);
-  const [currentTime, setCurrentTime] = useState()
-  const [update, setUpdate] = useState();
-  const [usd, setUsd] = useState('');
-  const [eur, setEur] = useState('');
-  const [gbp, setGbp] = useState('');
-  const [cny, setCny] = useState('');
-  const [chf, setChf] = useState('');
-  const [aud, setAud] = useState('');
-  const [cad, setCad] = useState('');
-  const [czk, setCzk] = useState('');
-  const [pln, setPln] = useState('');
+  const [error, setError] = useState(null); //Стейт для опрацювання помилки при GET запросі
+  const [currentTime, setCurrentTime] = useState() //Стейт для показу часу
+  const [update, setUpdate] = useState(); //Стейт для показу дати оновлення
+  const [usd, setUsd] = useState(''); //Стейт для валюти долар
+  const [eur, setEur] = useState(''); //Стейт для валюти євро
+  const [gbp, setGbp] = useState(''); //Стейт для валюти фунт стерлінгів
+  const [cny, setCny] = useState(''); //Стейт для валюти юань
+  const [chf, setChf] = useState(''); //Стейт для валюти швейцарський франк
+  const [aud, setAud] = useState(''); //Стейт для валюти австралійський долар
+  const [cad, setCad] = useState(''); //Стейт для валюти канадський долар
+  const [czk, setCzk] = useState(''); //Стейт для валютий чеська крона
+  const [pln, setPln] = useState(''); //Стейт для валюти польська злота
 
-  const url = `https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json`;
+  const url = `https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json`; //Змінна url зберігає посилання на JSON файл куди відправляються GET запроси
 
 
+  // Хук спочатку намагається виконати GET запрос та отримати курс валют і записати результат в кожний зі стейтів, якщо виконати GET запрос не вдається то повинна спрацювати помилка
   useEffect(() => {
     try {
       axios.get(url).then((response) => {
@@ -37,7 +38,6 @@ function App() {
         setCad(response.data[1].rate.toFixed(2));
         setCzk(response.data[4].rate.toFixed(2));
         setPln(response.data[33].rate.toFixed(2));
-        // console.log(response.data);
       })
     } catch {
       setError('Виникла помилка, спробуйте трохи пізніше!');
@@ -45,7 +45,7 @@ function App() {
   }, [])
 
 
-
+  // Годиник
   useEffect(() => {
     setInterval(() => {
       const date = new Date();
@@ -53,13 +53,13 @@ function App() {
     }, 1000);
   }, []);
 
-
+  // Змінні використовуються для формування дати(день,рік,місяць)
   const date = new Date();
   const day = date.getDate();
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
 
-
+  // Обєкт value, передається дочірним компонентам через Context.Provider
   const value = {
     usd,
     eur,

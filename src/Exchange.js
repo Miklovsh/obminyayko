@@ -4,18 +4,20 @@ import Context from "./Context";
 
 function Exchange() {
 
-  const value = useContext(Context);
+  const value = useContext(Context); // дістав обєкт value який передав за допомогою Context.Provider з батьківського компоненту App
 
-  const [inputMainState, setInputMainState] = useState('');
-  const [result, setResult] = useState(0);
+  const [inputMainState, setInputMainState] = useState(''); // Стейт для інпупа куди буде вводитися сума яку потрібно конвертувати
+  const [result, setResult] = useState(0); //Стейт в який записується результат функції count
 
-  let inputMain = React.createRef();
-  let selectRef = React.createRef();
+  let inputMain = React.createRef(); // створення нового ref для інпута для вводу суми яку потрібно конвертувати
+  let selectRef = React.createRef(); //створення нового ref для селекта
 
+  //Функція містить метод стейту inputMainState, метод приймає з атрибуту ref змінене значення в властивості current та записує результат в стейт inputMainState
   function changeInputMain() {
     setInputMainState(inputMain.current.value);
   }
 
+  // Функція блокує можливість вводити в інпут всі символи крім 0-9 та крапка
   function validateInputMain(e) {
     let theEvent = e || window.event;
     let key = theEvent.keyCode || theEvent.which;
@@ -27,6 +29,7 @@ function Exchange() {
     }
   }
 
+  // Якщо виконується умова то функція count в методі setResult множить суму яка була введена в інпуті на value обраного варіанту(валюти) в селекті, а результат операції записує в стейт result
   function count() {
     if (inputMainState.length > 0 && inputMainState.length < 8) {
       setResult(inputMain.current.value * selectRef.current.value);

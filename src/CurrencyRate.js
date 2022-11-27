@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import Context from "./Context";
 
 function CurrencyRate() {
 
-  const value = useContext(Context);
+  const value = useContext(Context); // дістав обєкт value який передав за допомогою Context.Provider з батьківського компоненту App
 
 
   return (
